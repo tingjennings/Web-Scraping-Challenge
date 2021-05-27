@@ -6,7 +6,7 @@ In this assignment, you will build a web application that scrapes various websit
 
 ### Before You Begin
 
-1. Create a new repository for this project called `web-scraping-challenge`. **Do not add this homework to an existing repository**.
+1. Create a new repository for this project called `web-scraping-challenge`. 
 
 2. Clone the new repository to your computer.
 
@@ -120,5 +120,4 @@ To submit your work to BootCampSpot, create a new GitHub repository and upload t
 
 - - -
 
-© 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
 # web-scraping-challenge
