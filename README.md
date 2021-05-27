@@ -1,4 +1,4 @@
-# Web Scraping Homework - Mission to Mars
+# Web Scraping - Mission to Mars
 
 ![mission_to_mars](Images/mission_to_mars.png)
 
@@ -119,5 +119,3 @@ To submit your work to BootCampSpot, create a new GitHub repository and upload t
 [Unit 12 Rubric - Web Scraping Homework - Mission to Mars](https://docs.google.com/document/d/1paGEIFS5yp2VQu6G8F45B4uj1t1t29zL73KEQrD0xpo/edit?usp=sharing)
 
 - - -
-
-# web-scraping-challenge
