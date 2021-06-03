@@ -1,13 +1,16 @@
 # Dependencies
+import os
 from splinter import Browser
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup 
 import requests
 import pandas as pd
+from splinter.exceptions import ElementDoesNotExist
+from webdriver_manager.chrome import ChromeDriverManager
 
 def init_browser():
     # Replace the path with your actual path to the chromedriver
-    executable_path = {'executable_path': '/usr/local/bin/chromedriver'}
-    return Browser('chrome', **executable_path, headless=False)
+  executable_path = {'executable_path': ChromeDriverManager().install()}
+  browser = Browser('chrome', **executable_path, headless=False)
 
 mars_info = {}
 
@@ -32,15 +35,13 @@ def scrape_mars_image():
     browser = init_browser()
 
     # Visit Mars Space Images url through splinter module
-    image_url = 'https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars'
-    browser.visit(image_url)
-
+    main_url = 'https://spaceimages-mars.com/'
+    browser.visit(main_url) 
+    browser.links.find_by_partial_text('FULL IMAGE').click()    
     html = browser.html
     soup = BeautifulSoup(html, 'html.parser')
 
-    featured_image_url = soup.find('article')['style'].replace('background-image: url(','').replace(');', '')[1:-1]
-    main_url = 'https://www.jpl.nasa.gov'
-    
+    featured_image_url = soup.find('img', class_='fancybox-image')['src']
     featured_image_url = main_url + featured_image_url
     mars_info["featured_image_url"] = featured_image_url 
         
