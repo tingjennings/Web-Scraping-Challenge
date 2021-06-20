@@ -7,14 +7,11 @@ import pandas as pd
 from splinter.exceptions import ElementDoesNotExist
 from webdriver_manager.chrome import ChromeDriverManager
 
-def init_browser():
-    # Replace the path with your actual path to the chromedriver
-  executable_path = {'executable_path': ChromeDriverManager().install()}
-  browser = Browser('chrome', **executable_path, headless=False)
-
+ 
 
 def scrape_all():
-    browser = init_browser()
+    executable_path = {'executable_path': ChromeDriverManager().install()}
+    browser = Browser('chrome', **executable_path, headless=False)
     title,paragraph=scrape_mars_news(browser)
 
     mars_info = {
